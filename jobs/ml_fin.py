@@ -17,7 +17,7 @@ spark = SparkSession.builder \
 # Configura o nível de log
 spark.sparkContext.setLogLevel('ERROR')
 
-df_sil = spark.read.csv('data/dados1_cap05.csv', header = True, inferSchema = True)
+df_sil = spark.read.csv('data/dados.csv', header = True, inferSchema = True)
 df_sil = df_sil.withColumn("Ano", year(df_sil["Data"]))
 df_sil = df_sil.withColumn("Mes", month(df_sil["Data"]))
 df_sil = df_sil.withColumn("Dia", dayofmonth(df_sil["Data"]))
